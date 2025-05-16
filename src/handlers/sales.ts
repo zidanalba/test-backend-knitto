@@ -223,6 +223,27 @@ export const deleteSaleById = async (req: Request, res: Response) => {
   }
 };
 
+export const getReportSalesPerDay = async (req: Request, res: Response) => {
+  try {
+    const sales = await db.any(`
+      SELECT 
+        sh."date",
+        sum(sd.subtotal) as total_sales
+      FROM sales_details sd
+      JOIN sales_headers sh ON sd.sales_header_id = sh.id
+      GROUP BY sh.date
+      ORDER BY sh.date
+      `);
+    res.status(200).json({
+      message: "Sales report per day retrieved successfully.",
+      data: sales,
+    });
+  } catch (error) {
+    console.error("Error fetching sales:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 // utils
 async function generateUniqueSalesCode(t: any): Promise<string> {
   const today = new Date();

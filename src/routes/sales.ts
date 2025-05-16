@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createSales, deleteSaleById, getSaleById, getSales, updateSaleById } from "../handlers/sales";
+import { createSales, deleteSaleById, getReportSalesPerDay, getSaleById, getSales, updateSaleById } from "../handlers/sales";
 import { authenticateJWT } from "../middlewares/authenticateJWT";
 
 const router = Router();
@@ -28,6 +28,21 @@ const router = Router();
  *         description: Sales retrieved successfully.
  */
 router.get("/", authenticateJWT, getSales);
+
+/**
+ * @swagger
+ * /sales/report:
+ *   get:
+ *     summary: Rekap penjualan per harinya
+ *     tags :
+ *          - Report
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Sales report retrieved successfully.
+ */
+router.get("/report", authenticateJWT, getReportSalesPerDay);
 
 /**
  * @swagger
