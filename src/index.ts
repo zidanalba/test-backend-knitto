@@ -6,6 +6,7 @@ import customersRouter from "./routes/customers";
 import authRouter from "./routes/auth";
 import { swaggerSpec, swaggerUi } from "./swagger";
 import dotenv from "dotenv";
+import "./cron/dailyReport";
 
 const app = express();
 
