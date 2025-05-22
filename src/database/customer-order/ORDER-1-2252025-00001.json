@@ -1,0 +1,17 @@
+{
+  "order_number": "ORDER-1-2252025-00001",
+  "id_customer": 1,
+  "address": "Jl. Sudirman No. 1",
+  "payment_type": "TRANSFER",
+  "items": [
+    {
+      "product_id": 101,
+      "name": "Keyboard",
+      "price": 150000,
+      "qty": 2
+    }
+  ],
+  "total_price": 300000,
+  "status": "Diproses",
+  "created_at": "2025-05-22T02:34:24.330Z"
+}

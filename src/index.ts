@@ -4,6 +4,7 @@ import salesRouter from "./routes/sales";
 import productsRouter from "./routes/products";
 import customersRouter from "./routes/customers";
 import authRouter from "./routes/auth";
+import orderRouter from "./routes/order";
 import { swaggerSpec, swaggerUi } from "./swagger";
 import dotenv from "dotenv";
 import "./cron/dailyReport";
@@ -21,6 +22,7 @@ app.use("/api/sales", salesRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/customers", customersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/order", orderRouter);
 
 const PORT = 3000;
 
