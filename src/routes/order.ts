@@ -3,17 +3,9 @@ import { authenticateJWT } from "../middlewares/authenticateJWT";
 import { createOrder } from "../handlers/order";
 
 const router = Router();
-
 /**
  * @swagger
- * tags:
- *   - name: Order
- *     description: API untuk mengelola order pembelian
- */
-
-/**
- * @swagger
- * /api/order/:
+ * /order/:
  *   post:
  *     summary: Membuat order baru
  *     tags:
@@ -27,6 +19,9 @@ const router = Router();
  *           schema:
  *             type: object
  *             properties:
+ *               id_customer:
+ *                 type: integer
+ *                 example: 1
  *               address:
  *                 type: string
  *                 example: "Jl. Merdeka No. 10, Jakarta"
