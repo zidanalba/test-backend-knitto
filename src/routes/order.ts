@@ -70,6 +70,6 @@ const router = Router();
  *         description: Kesalahan server / penyimpanan file gagal
  */
 
-router.post("/", authenticateJWT, createOrder);
+router.post("/", createOrder);
 
 export default router;
